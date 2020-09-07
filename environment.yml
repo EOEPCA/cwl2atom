@@ -1,0 +1,8 @@
+name: env_cwl2atom
+channels:
+  - terradue
+  - conda-forge
+dependencies:
+  - pyyaml
+  - lxml
+  - click
