@@ -15,3 +15,8 @@ python setup.py install
 ```
 
 ## Run the tool
+
+```bash
+cwl2atom eoepca-vegetation-index-ref.cwl > eoepca-vegetation-index-ref.atom 
+```
+
