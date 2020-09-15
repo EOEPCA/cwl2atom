@@ -8,7 +8,13 @@ Create the conda environment with:
 conda env create -f environment.yml
 ```
 
-Activate the environment and run:
+Activate the environment with:
+
+```bash
+conda activate env_cwl2atom
+```
+
+and run:
 
 ```bash
 python setup.py install
