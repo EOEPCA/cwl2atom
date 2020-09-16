@@ -67,7 +67,8 @@ class Atom(object):
 
         if content is not None:
             
-            c = etree.SubElement(offering, '{{{}}}content'.format(namespaces['owc']))  
+            c = etree.SubElement(offering, '{{{}}}content'.format(namespaces['owc']))
+            c.set("type", "application/cwl")
             c.text = content
        
         
