@@ -1,23 +1,34 @@
 # cwl2atom 
 
+
 ## Installation
 
-Create the conda environment with:
+### Via conda
 
 ```bash
-conda env create -f environment.yml
+conda install -c eoepca cwl2atom
 ```
 
-Activate the environment with:
+### Development
+
+Clone this repo, then create the conda environment with:
 
 ```bash
+cd cwl-wrapper
+conda env create -f environment.yml
 conda activate env_cwl2atom
 ```
 
-and run:
+Use setuptools to install the project:
 
 ```bash
 python setup.py install
+```
+
+Check the installation with:
+
+```bash
+cwl2atom --help
 ```
 
 ## Run the tool
