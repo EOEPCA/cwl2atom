@@ -1,14 +1,10 @@
 import lxml.etree as etree
 import sys
-import requests
 import os
 import string
 import hashlib
 import time
 import logging
-from requests.adapters import HTTPAdapter
-from requests.packages.urllib3.util.retry import Retry
-from requests.auth import HTTPBasicAuth
 
 namespaces = dict()
 

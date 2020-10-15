@@ -6,6 +6,7 @@ from .atom import Atom
 from lxml import etree
 import datetime
 import click
+import hashlib
 
 logging.basicConfig(stream=sys.stderr, 
                     level=logging.INFO,
@@ -41,9 +42,14 @@ def main(path):
   </entry>
 </feed>'''
     
+    m = hashlib.md5()
+    m.update(cwl_content.encode('utf-8'))
+
+    identifier = m.hexdigest()
+    
     atom_template = Atom(etree.fromstring(template))
     
-    atom_template.set_identifier(workflow['id'])
+    atom_template.set_identifier(identifier)
     atom_template.set_title_text(workflow['label'])
     atom_template.set_summary_text(workflow['doc'])
 
@@ -55,14 +61,9 @@ def main(path):
     atom_template.add_offering(offering)
     
     sys.stdout.write(b'<?xml version="1.0" encoding="UTF-8"?>\n'.decode('utf-8'))
-    sys.stdout.write(etree.tostring(atom_template.root, pretty_print=True).decode('utf-8'))
-    
-    # if one wants to save to a file
-    #with open('pretty.xml', 'wb') as file: 
-        
-    #    file.write(b'<?xml version="1.0" encoding="UTF-8"?>\n')
-    #    file.write(etree.tostring(atom_template.root, pretty_print=True))
-        
+    sys.stdout.write(etree.tostring(atom_template.root, 
+                                    pretty_print=True).decode('utf-8'))
+            
 if __name__ == "__main__":
     
     main()
