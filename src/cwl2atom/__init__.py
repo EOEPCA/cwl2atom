@@ -53,7 +53,7 @@ def main(path):
     atom_template.set_title_text(workflow['label'])
     atom_template.set_summary_text(workflow['doc'])
 
-    atom_template.set_dcdate(datetime.datetime.now().strftime('%Y-%m-%dT%H:%M%SZ'))
+    atom_template.set_dcdate(datetime.datetime.now().strftime('%Y-%m-%dT%H:%M:%SZ'))
 
     offering = atom_template.create_offering(code='http://www.opengis.net/eoc/applicationContext/cwl',
                                              content=cwl_content)
