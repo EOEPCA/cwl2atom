@@ -11,5 +11,7 @@ print(find_packages(where='src'))
 
 setup(entry_points=console_scripts,
       packages=find_packages(where='src'),
-      package_dir={'': 'src'})
-
+      package_dir={'': 'src'},
+      install_requires=['nose'],
+      test_suite='nose.collector',
+      tests_require=['nose'])

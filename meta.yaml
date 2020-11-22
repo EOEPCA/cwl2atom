@@ -12,6 +12,17 @@ build:
   script: python setup.py install
   noarch: python
 
+test:
+  imports:
+    - tests
+  requires:
+    - nose
+  source_files:
+    - tests
+  commands:
+    - nosetests tests/
+
+
 requirements:
   host:
     - setuptools
