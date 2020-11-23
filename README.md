@@ -14,7 +14,7 @@ conda install -c eoepca cwl2atom
 Clone this repo, then create the conda environment with:
 
 ```bash
-cd cwl-wrapper
+cd cwl2atom
 conda env create -f environment.yml
 conda activate env_cwl2atom
 ```
