@@ -23,14 +23,14 @@ def main(path):
     workflow = cwl_obj.workflow
 
     template = '''<?xml version="1.0"?>
-                  <feed xmlns="http://www.w3.org/2005/Atom">
-                        <entry>
-                            <title type="text"></title>
-                            <summary type="html"></summary>
-                            <date xmlns="http://purl.org/dc/elements/1.1/"></date>
-                            <identifier xmlns="http://purl.org/dc/elements/1.1/"></identifier>
-                        </entry>
-                  </feed>'''
+    <feed xmlns="http://www.w3.org/2005/Atom">
+      <entry>
+        <title type="text"></title>
+        <summary type="html"></summary>
+        <date xmlns="http://purl.org/dc/elements/1.1/"></date>
+        <identifier xmlns="http://purl.org/dc/elements/1.1/"></identifier>
+      </entry>
+    </feed>'''
 
     m = hashlib.md5()
     m.update(cwl_content.encode('utf-8'))
@@ -51,8 +51,7 @@ def main(path):
     atom_template.add_offering(offering)
 
     sys.stdout.write(b'<?xml version="1.0" encoding="UTF-8"?>\n'.decode('utf-8'))
-    sys.stdout.write(etree.tostring(atom_template.root,
-                                    pretty_print=True).decode('utf-8'))
+    sys.stdout.write(etree.tostring(atom_template.root,pretty_print=True).decode('utf-8'))
 
 
 if __name__ == "__main__":

@@ -3,24 +3,22 @@ import nose
 import os
 from nose.tools import assert_equal
 
-cwl_dir = "example.cwl"
-
 
 def test_if_cwl_exist():
-    nose.tools.assert_equal(os.path.exists(cwl_dir), True,
+    nose.tools.assert_equal(os.path.exists("example.cwl"), True,
                             "The path of cwl file for testing not exists")
 
 
 class TestCases:
-    cwl_obj = CwlLoader(cwl_dir)
-    cwl_content = cwl_obj.get_cwl_content()
-    workflow = cwl_obj.workflow
+
+    def __init__(self):
+        self.cwl_reader = CwlLoader("example.cwl")
+        self.workflow = self.cwl_reader.workflow
 
     def test_if_workflow_class_exists(self):
-        try:
-            assert_equal(self.workflow['class'], "Workflow", "\'Workflow\' class is not exist in .cwl file")
-        finally:
-            print("workflow test done")
+        print("Wow")
+        assert_equal(self.workflow['class'], "Workflow", "\'Workflow\' class is not exist in .cwl file")
+        print("Done")
 
     def test_if_workflow_class_has_id(self):
         assert "id" in self.workflow
