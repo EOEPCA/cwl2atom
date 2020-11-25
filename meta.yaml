@@ -26,10 +26,10 @@ requirements:
     - setuptools
 
   run:
+    - setuptools
     - pyyaml
     - jinja2
     - click
-    - setuptools
     - nose
     - lxml
 

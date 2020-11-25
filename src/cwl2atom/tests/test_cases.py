@@ -1,6 +1,6 @@
-import nose
 import os
 from nose.tools import assert_equal
+import nose
 from cwl2atom import CwlLoader
 
 
@@ -16,9 +16,7 @@ class TestCases:
         self.workflow = self.cwl_reader.workflow
 
     def test_if_workflow_class_exists(self):
-        print("Wow")
         assert_equal(self.workflow['class'], "Workflow", "\'Workflow\' class is not exist in .cwl file")
-        print("Done")
 
     def test_if_workflow_class_has_id(self):
         assert "id" in self.workflow

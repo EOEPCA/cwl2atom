@@ -1,7 +1,5 @@
 import logging
 import sys
-import yaml
-import os
 from .atom import Atom
 from .cwl_loader import CwlLoader
 from lxml import etree
