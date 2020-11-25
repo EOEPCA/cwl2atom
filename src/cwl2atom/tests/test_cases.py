@@ -1,19 +1,18 @@
 import nose
 import os
 from nose.tools import assert_equal
-# from src.cwl2atom.cwl_loader import CwlLoader
 from cwl2atom import CwlLoader
 
 
 def test_if_cwl_exist():
-    nose.tools.assert_equal(os.path.exists("/home/farid/Videos/cwl2atom/example.cwl"), True,
+    nose.tools.assert_equal(os.path.exists("src/cwl2atom/tests/data/example.cwl"), True,
                             "The path of cwl file for testing not exists")
 
 
-class TestCases(CwlLoader):
+class TestCases:
 
     def __init__(self):
-        self.cwl_reader = CwlLoader("/home/farid/Videos/cwl2atom/example.cwl")
+        self.cwl_reader = CwlLoader("src/cwl2atom/tests/data/example.cwl")
         self.workflow = self.cwl_reader.workflow
 
     def test_if_workflow_class_exists(self):
