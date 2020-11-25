@@ -13,14 +13,12 @@ build:
   noarch: python
 
 test:
-  imports:
-    - tests
   requires:
     - nose
   source_files:
-    - tests
+    - src/cwl2atom/tests
   commands:
-    - nosetests tests/
+    - nosetests src/cwl2atom/tests/
 
 
 requirements:
@@ -33,6 +31,7 @@ requirements:
     - click
     - setuptools
     - nose
+    - lxml
 
 about:
   home: https://github.com/eoepca/
